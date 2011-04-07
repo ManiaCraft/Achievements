@@ -44,7 +44,7 @@ public class Achievements extends JavaPlugin {
 	public boolean enabled = false;
 	public boolean useSQL = false;
 	public boolean useCraftIRC = false;
-	public final static Double version = 0.972;
+	public final static Double version = 0.981;
 	public final static String logprefix = "[Achievements-" + version + "]";
 	private final static Yaml yaml = new Yaml(new SafeConstructor());
 	private String name = "Achievements";
@@ -119,7 +119,8 @@ public class Achievements extends JavaPlugin {
 		this.allowConsoleCommands = properties.getBoolean("achievements-console-commands", true, "allow /-commands, executed as CommandSender=console, * is replaced with players name. example: '/kick * you got a punish achievement'");
 		this.obtainedColor = ("&" + properties.getString("achievements-obtainedcolor", "a", ""));
 		this.useSQL = properties.getBoolean("achievements-use-sql", false, "");
-		useSQLDefinitions = properties.getBoolean("achievements-definintions-sql", false, "set to true to use definitions from sql-table");
+		properties.remove("achievements-definintions-sql");
+		useSQLDefinitions = properties.getBoolean("achievements-definitions-sql", false, "set to true to use definitions from sql-table");
 		this.useCraftIRC = properties.getBoolean("achievements-craftirc", checkCraftIRC(), "");
 		ircTags.clear();
 		for (String tag : properties.getString("achievements-craftirc-tags", "default", "by comma seperated CraftIRC tags").split(",")) {
@@ -502,7 +503,7 @@ public class Achievements extends JavaPlugin {
 		if (groupManagerInstance != null)
 			return true;
 		Plugin plug = this.getServer().getPluginManager().getPlugin("GroupManager");
-		if (plug != null) {
+		if (plug != null && plug.isEnabled()) {
 			groupManagerInstance = (GroupManager) plug;
 			LogInfo("Found supported plugin: " + plug.getDescription().getName());
 			return true;

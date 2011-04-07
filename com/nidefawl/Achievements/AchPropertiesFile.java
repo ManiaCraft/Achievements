@@ -162,4 +162,8 @@ public class AchPropertiesFile {
 			this.comment = comment;
 		}
 	}
+
+	public void remove(String string) {
+		map.remove(string);
+	}
 }
