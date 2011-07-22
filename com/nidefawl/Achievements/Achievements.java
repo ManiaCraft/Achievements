@@ -44,7 +44,7 @@ public class Achievements extends JavaPlugin {
 	public boolean enabled = false;
 	public boolean useSQL = false;
 	public boolean useCraftIRC = false;
-	public final static Double version = 0.981;
+	public final static Double version = 1.0;
 	public final static String logprefix = "[Achievements-" + version + "]";
 	private final static Yaml yaml = new Yaml(new SafeConstructor());
 	private String name = "Achievements";
@@ -386,11 +386,8 @@ public class Achievements extends JavaPlugin {
 
 			if (cmd.getName().equals("listachievements") && Stats().Perms().permission(sender, "achievements.view.list")) {
 				AchLister.SendAchList(this, player, args);
-				System.out.println(Stats().Perms().permission(sender, "achievements.view.list") + "erfolg");
+				//System.out.println(Stats().Perms().permission(sender, "achievements.view.list") + "erfolg");
 				return true;
-			}
-			else  {
-				System.out.println(Stats().Perms().permission(sender, "achievements.view.list"));
 			}
 			}
 		if (cmd.getName().equals("checkachievements") && Stats().Perms().permission(sender, "achievements.admin.check")) {
