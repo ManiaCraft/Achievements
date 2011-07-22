@@ -5,9 +5,8 @@ import java.io.File;
 import java.io.FileReader;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
-import org.bukkit.plugin.Plugin;
-
-import com.earth2me.essentials.Essentials;
+//import org.bukkit.plugin.Plugin;
+//import com.earth2me.essentials.Essentials;
 import com.nidefawl.Achievements.Achievements;
 import com.nidefawl.Achievements.Messaging.AchMessaging;
 
@@ -19,6 +18,7 @@ public class AchCommandWarp {
 		}
 		try {
 
+			/*
 			Plugin plugEssentials = plugin.getServer().getPluginManager().getPlugin("Essentials");
 			if (plugEssentials != null && plugEssentials.isEnabled()) {
 				com.earth2me.essentials.User user = com.earth2me.essentials.User.get(player);
@@ -26,8 +26,9 @@ public class AchCommandWarp {
 					user.warpTo(s[1]);
 				}
 			} else {
+			*/
 				WarpTo(player,s[1]);
-			}
+			//}
 		} catch (Exception e) {
 			Achievements.LogError("warp command failed: " + e.getMessage());
 			return false;
