@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path=""/>
+	<classpathentry kind="lib" path="E:/Java/Buildpaths/craftbukkit-0.0.1-SNAPSHOT.jar"/>
+	<classpathentry kind="lib" path="E:/Java/Buildpaths/iConomy.jar"/>
+	<classpathentry kind="lib" path="E:/Java/Buildpaths/mysql-connector-java-bin.jar"/>
+	<classpathentry kind="lib" path="E:/Java/Buildpaths/EssentialsGroupManager.jar"/>
+	<classpathentry kind="lib" path="E:/Users/ManiacTwister/Documents/Server/plugins/Stats.jar"/>
+	<classpathentry kind="lib" path="E:/Java/Buildpaths/CraftIRC(2).jar"/>
+	<classpathentry kind="lib" path="E:/Java/Buildpaths/Essentials.jar"/>
+	<classpathentry kind="lib" path="E:/Java/Buildpaths/EssentialsChat.jar"/>
+	<classpathentry kind="lib" path="E:/Java/Buildpaths/EssentialsGeoIP.jar"/>
+	<classpathentry kind="lib" path="E:/Java/Buildpaths/EssentialsGroupBridge.jar"/>
+	<classpathentry kind="lib" path="E:/Java/Buildpaths/EssentialsProtect.jar"/>
+	<classpathentry kind="lib" path="E:/Java/Buildpaths/EssentialsSpawn.jar"/>
+	<classpathentry kind="lib" path="E:/Java/Buildpaths/EssentialsXMPP.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

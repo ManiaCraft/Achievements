@@ -4,11 +4,22 @@ import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 import com.nidefawl.Achievements.Achievements;
 import com.nidefawl.Achievements.Messaging.AchMessaging;
-import com.nijiko.coelho.iConomy.iConomy;
+import com.iConomy.iConomy;
+//import com.iConomy.system.Account;
+//import com.iConomy.system.BankAccount;
+import com.iConomy.system.Holdings;
+//import com.iConomy.util.Constants;
+
 
 public class AchCommandMoney {
 
+	//private Account account;
+	//private Holdings holdings;
+	
 	public static boolean handleCommand(Achievements plugin, Player player, String[] s) {
+		
+		
+		
 		if (s.length < 2) {
 			Achievements.LogError("Bad command (not enough arguments) correct is: money amount");
 			return false;
@@ -22,23 +33,17 @@ public class AchCommandMoney {
 		}
 		String currency = "money";
 		Plugin plugiConomy = plugin.getServer().getPluginManager().getPlugin("iConomy");
-		Plugin plugEssentials = plugin.getServer().getPluginManager().getPlugin("Essentials");
+		
+		
 		if (plugiConomy != null && plugiConomy.isEnabled()) {
-			currency = iConomy.getBank().getCurrency();
-			if (iConomy.getBank().getAccount(player.getName()) != null) {
-				iConomy.getBank().getAccount(player.getName()).add(amount);
-				iConomy.getBank().getAccount(player.getName()).save();
+			Holdings balance = iConomy.getAccount(player.getName()).getHoldings();
+			if(iConomy.hasAccount(player.getName())) {
+				balance.add(amount);
 			}
-		} else if (plugEssentials != null && plugEssentials.isEnabled()) {
-			try {
-				com.earth2me.essentials.User user = com.earth2me.essentials.User.get(player);
-				if (user != null) {
-					user.payUser(user, amount);
-				}
-			} catch (Exception e) {
-			}
-
-		} else {
+		} 
+		
+		
+		else {
 			Achievements.LogError("Did not find a money plugin!");
 			return false;
 		}

@@ -386,9 +386,13 @@ public class Achievements extends JavaPlugin {
 
 			if (cmd.getName().equals("listachievements") && Stats().Perms().permission(sender, "achievements.view.list")) {
 				AchLister.SendAchList(this, player, args);
+				System.out.println(Stats().Perms().permission(sender, "achievements.view.list") + "erfolg");
 				return true;
 			}
-		}
+			else  {
+				System.out.println(Stats().Perms().permission(sender, "achievements.view.list"));
+			}
+			}
 		if (cmd.getName().equals("checkachievements") && Stats().Perms().permission(sender, "achievements.admin.check")) {
 			checkAchievements();
 			sender.sendMessage(ChatColor.LIGHT_PURPLE + "Achievements updated.");
