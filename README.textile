@@ -1,4 +1,4 @@
-h3. Fork of nidefawl's achiviement plugin.
+h3. Fork of nidefawl's achievement plugin.
 
 * Updated to RB #1000, implement superperms support (bukkit's new build-in permissions)
 * Upated iConomy Support (version 5)
